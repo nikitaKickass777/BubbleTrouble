@@ -4,7 +4,7 @@ using FMODUnity;
 using UnityEngine.UI;
 
 
-public class Bubble : MonoBehaviour
+public class Bubble : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private EventReference bubblePop;
     // Start is called before the first frame update
@@ -16,6 +16,8 @@ public class Bubble : MonoBehaviour
     public const float SCREEN_HEIGHT = 8f; // Screen height
     ParticleSystem particleSystem;
     public SpriteRenderer image;
+
+    private int playerExperience;
     void Start()
     {
         maxHorizontalDrift= Random.Range(0.3f,2.5f);
@@ -56,9 +58,9 @@ public class Bubble : MonoBehaviour
         hp -= damage;
         if (hp <= 0)
         {
-            DestroyBubble();
             //play sound
             AudioManager.instance.PlayOneShot(bubblePop, this.transform.position);
+            DestroyBubble();
             //play animation
             
         }
@@ -88,5 +90,10 @@ public class Bubble : MonoBehaviour
             default:
                 return Mathf.Sin(value);
         }
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.playerExperience = this.playerExperience;
     }
 }

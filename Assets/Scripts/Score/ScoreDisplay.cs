@@ -9,6 +9,5 @@ public class ScoreDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI expText;
 
     private int experience;
-
     
 }
