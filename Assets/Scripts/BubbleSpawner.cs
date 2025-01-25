@@ -13,7 +13,7 @@ public class BubbleSpawner : MonoBehaviour
 
     void Start()
     {
-        SpawnInitialBubbles();
+              SpawnInitialBubbles();
     }
 
     void Update()

@@ -12,7 +12,9 @@ public class RhythmManager : MonoBehaviour
     private bool inRhythm = false;
 
     public bool InRhythm => inRhythm;
-    public Image rhythmIndicator;  // Assign this in the Inspector
+
+    [SerializeField]    
+    private Animator boomBoxAnimator;
 
     private void Awake()
     {
@@ -40,12 +42,12 @@ public class RhythmManager : MonoBehaviour
         if (currentTime >= nextBeatTime - beatWindow && currentTime <= nextBeatTime + beatWindow)
         {
             inRhythm = true;
-            if (rhythmIndicator) rhythmIndicator.color = Color.green;
+            boomBoxAnimator.Play("BoomBoxBeat");
         }
         else
         {
             inRhythm = false;
-            if (rhythmIndicator) rhythmIndicator.color = Color.red;
+            boomBoxAnimator.Play("BoomBoxIdle");
         }
 
         if (currentTime >= nextBeatTime)
