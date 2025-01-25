@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public int score = 0;
+    public int maximumScore = 100;
     public static ScoreManager instance { get; private set; }
     // Start is called before the first frame update
     void Awake(){

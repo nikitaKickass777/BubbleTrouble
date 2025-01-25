@@ -6,7 +6,7 @@ public class RhythmManager : MonoBehaviour
     public static RhythmManager Instance { get; private set; }
 
     public float bpm = 88f;  // Beats per minute
-    public float beatWindow = 0.2f;  // Timing window for rhythm
+    public float beatWindow = 0.5f;  // Timing window for rhythm
     private float beatInterval;  // Time between beats
     private float nextBeatTime;  // Time of next beat
     private bool inRhythm = false;
