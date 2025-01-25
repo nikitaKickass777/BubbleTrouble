@@ -1,6 +1,73 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8565494527841582892
+--- !u!114 &-9084035592751045623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/bubblePop
+  m_EditorClassIdentifier: 
+  Path: event:/bubblePop
+  Guid:
+    Data1: -1650527816
+    Data2: 1253971284
+    Data3: -786719592
+    Data4: -711365408
+  Banks:
+  - {fileID: 1513768264802698265}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8132315662035586732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Desktop/BubbleTroubleSound/BubbleTroubleSounds/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638734120063077053
+  FileSizes:
+  - Name: Desktop
+    Value: 806
+  Exists: 1
+--- !u!114 &-6001193879465223565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Desktop/BubbleTroubleSound/BubbleTroubleSounds/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638734120063037226
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
+--- !u!114 &-3928893890524438147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +87,32 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
---- !u!114 &-7589607854743594127
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 449758327129590755}
+  - {fileID: 1513768264802698265}
+  - {fileID: -3928893890524438147}
+  EditorEvents:
+  - {fileID: -9084035592751045623}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -3928893890524438147}
+  StringsBanks:
+  - {fileID: 449758327129590755}
+  cacheTime: 638734147558546005
+  cacheVersion: 131622
+--- !u!114 &449758327129590755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,51 +132,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 806
   Exists: 1
---- !u!114 &-4727842755701273067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/BankA.bank
-  m_EditorClassIdentifier: 
-  Path: BubbleTroubleSounds/Build/Desktop/BankA.bank
-  Name: BankA
-  StudioPath: bank:/BankA
-  lastModified: 638734147558536005
-  FileSizes:
-  - Name: Desktop
-    Value: 4928
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -7589607854743594127}
-  - {fileID: -8565494527841582892}
-  - {fileID: -4727842755701273067}
-  EditorEvents:
-  - {fileID: 1505867420386609724}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -8565494527841582892}
-  StringsBanks:
-  - {fileID: -7589607854743594127}
-  cacheTime: 638734147558546005
-  cacheVersion: 131622
 --- !u!114 &1505867420386609724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,7 +151,7 @@ MonoBehaviour:
     Data3: -786719592
     Data4: -711365408
   Banks:
-  - {fileID: -4727842755701273067}
+  - {fileID: 7283791768879942714}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -112,3 +159,43 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1513768264802698265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BankA.bank
+  m_EditorClassIdentifier: 
+  Path: BubbleTroubleSounds/Build/Desktop/BankA.bank
+  Name: BankA
+  StudioPath: bank:/BankA
+  lastModified: 638734147558536005
+  FileSizes:
+  - Name: Desktop
+    Value: 4928
+  Exists: 1
+--- !u!114 &7283791768879942714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BankA.bank
+  m_EditorClassIdentifier: 
+  Path: ../Desktop/BubbleTroubleSound/BubbleTroubleSounds/Build/Desktop/BankA.bank
+  Name: BankA
+  StudioPath: bank:/BankA
+  lastModified: 638734120063541036
+  FileSizes:
+  - Name: Desktop
+    Value: 4928
+  Exists: 1

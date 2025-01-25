@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.UI;
 
 
-
-public class Bubble : MonoBehaviour
+public class Bubble : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private EventReference bubblePop;
     // Start is called before the first frame update
@@ -15,6 +14,10 @@ public class Bubble : MonoBehaviour
     public int hp = 1;        // Bubble health
     public string functionName= "sin";
     public const float SCREEN_HEIGHT = 8f; // Screen height
+    ParticleSystem particleSystem;
+    public SpriteRenderer image;
+
+    private int playerExperience;
     void Start()
     {
         maxHorizontalDrift= Random.Range(0.3f,2.5f);
@@ -23,7 +26,9 @@ public class Bubble : MonoBehaviour
                 functionName="cos";
             }
             
-
+        bpm = RhythmManager.Instance.bpm;
+        image = this.gameObject.GetComponent<SpriteRenderer>();
+        particleSystem = GetComponentInChildren<ParticleSystem>();
         
     }
     void Update()
@@ -56,8 +61,7 @@ public class Bubble : MonoBehaviour
             DestroyBubble();
             
             //play sound
-            AudioManager.instance.PlayOneShot(bubblePop, this.transform.position);
-            //play animation
+            AudioManager.instance.PlayOneShot(bubblePop, this.transform.position);  
             //increase score 
             ScoreManager.instance.IncrementScore(RhythmManager.Instance.inRhythm);
             
@@ -66,8 +70,15 @@ public class Bubble : MonoBehaviour
 
     public void DestroyBubble()
     {
-        Destroy(gameObject);
+        particleSystem.Play();
+        image.color = new Color(1.0f, 1.0f,1.0f,0.0f);
+        StartCoroutine(PlayParticlesCoroutine());
         
+    }
+
+    private IEnumerator PlayParticlesCoroutine(){
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     float horizontalMovementFunction(string functionName, float value)
@@ -81,5 +92,10 @@ public class Bubble : MonoBehaviour
             default:
                 return Mathf.Sin(value);
         }
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.playerExperience = this.playerExperience;
     }
 }

@@ -23,6 +23,9 @@ public class RhythmManager : MonoBehaviour
     [SerializeField]    
     private Animator boomBoxAnimator;
 
+    [SerializeField]    
+    private Animator backgroundImageAnimator;
+
     private void Awake()
     {
         if (Instance == null)
@@ -60,11 +63,13 @@ public class RhythmManager : MonoBehaviour
         {
             inRhythm = RhythmScore.MEDIOCRE;
             boomBoxAnimator.Play("BoomBoxBeat");
+            backgroundImageAnimator.Play("BackgroundImageBeat");
         }
         else
         {
             inRhythm = RhythmScore.SKILLISSUE;
             boomBoxAnimator.Play("BoomBoxIdle");
+            backgroundImageAnimator.Play("BackgroundImageIdle");
         }
         
 
