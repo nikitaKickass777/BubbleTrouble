@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.UI;
 
 
 public class Bubble : MonoBehaviour
@@ -14,6 +14,8 @@ public class Bubble : MonoBehaviour
     public int hp = 1;        // Bubble health
     public string functionName= "sin";
     public const float SCREEN_HEIGHT = 8f; // Screen height
+    ParticleSystem particleSystem;
+    public SpriteRenderer image;
     void Start()
     {
         maxHorizontalDrift= Random.Range(0.3f,2.5f);
@@ -23,6 +25,8 @@ public class Bubble : MonoBehaviour
             }
             
         bpm = RhythmManager.Instance.bpm;
+        image = this.gameObject.GetComponent<SpriteRenderer>();
+        particleSystem = GetComponentInChildren<ParticleSystem>();
         
     }
     void Update()
@@ -62,8 +66,15 @@ public class Bubble : MonoBehaviour
 
     public void DestroyBubble()
     {
-        Destroy(gameObject);
+        particleSystem.Play();
+        image.color = new Color(1.0f, 1.0f,1.0f,0.0f);
+        StartCoroutine(PlayParticlesCoroutine());
         ScoreManager.instance.IncrementScore(1);
+    }
+
+    private IEnumerator PlayParticlesCoroutine(){
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     float horizontalMovementFunction(string functionName, float value)
