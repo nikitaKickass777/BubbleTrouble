@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4232038906920105655}
   - component: {fileID: 2734871428703917102}
   m_Layer: 0
-  m_Name: Bubble
+  m_Name: BubbleGum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.94716984, g: 0.63442504, b: 0.881124, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
       Data4: -711365408
     Path: event:/bubblePop
   speed: 1
-  hp: 1
+  hp: 3
 --- !u!58 &2734871428703917102
 CircleCollider2D:
   m_ObjectHideFlags: 0

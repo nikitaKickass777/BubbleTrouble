@@ -48,7 +48,7 @@ public class Bubble : MonoBehaviour
         }
     }
 
-    void DestroyBubble()
+    public void DestroyBubble()
     {
         Destroy(gameObject);
         ScoreManager.instance.IncrementScore(1);
