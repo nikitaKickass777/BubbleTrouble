@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Bubble : MonoBehaviour
 {
+    [SerializeField] private EventReference bubblePop;
     // Start is called before the first frame update
     public float speed = 1f;  // Upward movement speed
     public int hp = 1;        // Bubble health
@@ -40,6 +42,7 @@ public class Bubble : MonoBehaviour
         {
             DestroyBubble();
             //play sound
+            AudioManager.instance.PlayOneShot(bubblePop, this.transform.position);
             //play animation
             
         }

@@ -98,6 +98,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c839a7bcc3392540b62f7fafe6a7af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubblePop:
+    Guid:
+      Data1: -1650527816
+      Data2: 1253971284
+      Data3: -786719592
+      Data4: -711365408
+    Path: event:/bubblePop
   speed: 1
   hp: 1
 --- !u!58 &2734871428703917102
