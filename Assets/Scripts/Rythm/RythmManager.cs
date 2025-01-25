@@ -16,6 +16,7 @@ public class RhythmManager : MonoBehaviour
     public float beatWindow = 0.5f;  // Timing window for rhythm
     private float beatInterval;  // Time between beats
     private float nextBeatTime;  // Time of next beat
+    public float animationStartOffset = 0.1f;
     public RhythmScore inRhythm = RhythmScore.SKILLISSUE;
 
     private RhythmScore InRhythm => inRhythm;
@@ -52,24 +53,25 @@ public class RhythmManager : MonoBehaviour
         if (currentTime >= nextBeatTime - beatWindow*0.2f && currentTime <= nextBeatTime + beatWindow*0.2f)
         {
             inRhythm = RhythmScore.PERFECT;
-            boomBoxAnimator.Play("BoomBoxBeat");
         }
         else if (currentTime >= nextBeatTime - beatWindow*0.7f && currentTime <= nextBeatTime + beatWindow*0.7f)
         {
             inRhythm = RhythmScore.GOOD;
-            boomBoxAnimator.Play("BoomBoxBeat");
         }
         else if (currentTime >= nextBeatTime - beatWindow && currentTime <= nextBeatTime + beatWindow)
         {
             inRhythm = RhythmScore.MEDIOCRE;
-            boomBoxAnimator.Play("BoomBoxBeat");
-            backgroundImageAnimator.Play("BackgroundImageBeat");
         }
         else
         {
             inRhythm = RhythmScore.SKILLISSUE;
             boomBoxAnimator.Play("BoomBoxIdle");
-            backgroundImageAnimator.Play("BackgroundImageIdle");
+        }
+
+        if (currentTime >= (nextBeatTime - beatWindow - animationStartOffset) && currentTime <= nextBeatTime + beatWindow)
+        {
+            //TODO: check when music
+            boomBoxAnimator.Play("BoomBoxBeat");
         }
         
 

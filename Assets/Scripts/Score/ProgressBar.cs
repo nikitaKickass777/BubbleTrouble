@@ -15,6 +15,7 @@ public class ProgressBar : MonoBehaviour
     void Start()
     {
         maximum = ScoreManager.instance.maximumScore;
+        ScoreManager.instance.score = maximum;
         currentScore = maximum;
         calculateFillAmount();
     }
@@ -25,13 +26,17 @@ public class ProgressBar : MonoBehaviour
         decrementingTimer -= Time.deltaTime;
         if(decrementingTimer <= 0){
             decrementingTimer = decrementingTimerConst;
-            currentScore -= 1;
-            ScoreManager.instance.score = currentScore;
-            calculateFillAmount();
+            ScoreManager.instance.score -= 3;
+            this.currentScore = ScoreManager.instance.score;
         }
+        calculateFillAmount();
     }
 
     public void calculateFillAmount(){
+        currentScore = ScoreManager.instance.score;
+        if(currentScore > maximum){
+            currentScore = maximum;
+        }
         fillAmount = (float) currentScore / (float) maximum;
         mask.fillAmount = fillAmount;
     }

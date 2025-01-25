@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using FMODUnity;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class Bubble : MonoBehaviour, IDataPersistence
@@ -16,6 +17,7 @@ public class Bubble : MonoBehaviour, IDataPersistence
     public const float SCREEN_HEIGHT = 8f; // Screen height
     ParticleSystem particleSystem;
     public SpriteRenderer image;
+    public GameObject scoreText;
 
     private int playerExperience;
     void Start()
@@ -29,6 +31,7 @@ public class Bubble : MonoBehaviour, IDataPersistence
         bpm = RhythmManager.Instance.bpm;
         image = this.gameObject.GetComponent<SpriteRenderer>();
         particleSystem = GetComponentInChildren<ParticleSystem>();
+        scoreText.SetActive(false);
         
     }
     void Update()
@@ -72,12 +75,35 @@ public class Bubble : MonoBehaviour, IDataPersistence
     {
         particleSystem.Play();
         image.color = new Color(1.0f, 1.0f,1.0f,0.0f);
+        showBubbleHitText();
         StartCoroutine(PlayParticlesCoroutine());
         
     }
 
+    public void showBubbleHitText(){
+        scoreText.SetActive(true);
+        TextMeshPro bubbleText = scoreText.GetComponent<TextMeshPro>();
+        Debug.Log(RhythmManager.Instance.inRhythm.ToString());
+        bubbleText.text = RhythmManager.Instance.inRhythm.ToString();
+        switch(RhythmManager.Instance.inRhythm){
+            case RhythmScore.PERFECT: 
+            bubbleText.color = Color.green;
+            break;
+            case RhythmScore.GOOD:
+            bubbleText.color = Color.cyan;
+            break;
+            case RhythmScore.MEDIOCRE:
+            bubbleText.text += " :(";
+            bubbleText.color = Color.grey;
+            break;
+            default:
+            break;
+        }
+        scoreText.transform.position = this.transform.position;
+    }
+
     private IEnumerator PlayParticlesCoroutine(){
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 

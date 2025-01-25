@@ -422,6 +422,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bpm: 88
   beatWindow: 0.6
+  animationStartOffset: 0.8
+  inRhythm: 0
   boomBoxAnimator: {fileID: 1201965726}
   backgroundImageAnimator: {fileID: 956546291}
 --- !u!1 &408510763
