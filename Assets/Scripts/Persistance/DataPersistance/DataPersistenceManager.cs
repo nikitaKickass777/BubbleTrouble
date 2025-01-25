@@ -38,7 +38,7 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.SaveData(gameData);
         }
-        Debug.Log("Saved XP = " + gameData.playerExperience);
+        Debug.Log("Saved XP = " + ScoreManager.instance.score);
     }
 
     private void OnApplicationQuit()
