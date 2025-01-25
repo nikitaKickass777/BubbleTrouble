@@ -6,15 +6,27 @@ using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
+    public EventReference backgroundSound;
+
+    private EventInstance musicInstance;
     public static AudioManager instance { get; private set; }
     // Start is called before the first frame update
-    void Awake(){
-        if(instance!=null && instance!=this){
+    void Awake()
+    {
+        if(instance!=null && instance!=this)
+        {
             Destroy(this);
             return;
         }
 
         instance = this;
+    }
+
+    public void Start()
+    {
+        //play background sound -- not working?
+        musicInstance = CreateEventInstance(backgroundSound);
+        musicInstance.start();
     }
     
     public void PlayOneShot(EventReference sound, Vector3 position)
@@ -26,5 +38,11 @@ public class AudioManager : MonoBehaviour
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         return eventInstance;
-    } 
+    }
+
+    private void OnDestroy()
+    {
+        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicInstance.release();
+    }
 }

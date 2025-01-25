@@ -47,6 +47,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 806
   Exists: 1
+--- !u!114 &-7305189882059787947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/backgroundMusic1
+  m_EditorClassIdentifier: 
+  Path: event:/backgroundMusic1
+  Guid:
+    Data1: 1437842761
+    Data2: 1088157265
+    Data3: 632620165
+    Data4: -1488586879
+  Banks:
+  - {fileID: 1513768264802698265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24031
 --- !u!114 &-6001193879465223565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +109,7 @@ MonoBehaviour:
   Path: BubbleTroubleSounds/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638734147558546005
+  lastModified: 638734487421156499
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -105,12 +132,13 @@ MonoBehaviour:
   - {fileID: -3928893890524438147}
   EditorEvents:
   - {fileID: -9084035592751045623}
+  - {fileID: -7305189882059787947}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3928893890524438147}
   StringsBanks:
   - {fileID: 449758327129590755}
-  cacheTime: 638734147558546005
+  cacheTime: 638734487421186426
   cacheVersion: 131622
 --- !u!114 &449758327129590755
 MonoBehaviour:
@@ -127,10 +155,10 @@ MonoBehaviour:
   Path: BubbleTroubleSounds/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638734147558546005
+  lastModified: 638734487421186426
   FileSizes:
   - Name: Desktop
-    Value: 806
+    Value: 864
   Exists: 1
 --- !u!114 &1505867420386609724
 MonoBehaviour:
@@ -174,10 +202,10 @@ MonoBehaviour:
   Path: BubbleTroubleSounds/Build/Desktop/BankA.bank
   Name: BankA
   StudioPath: bank:/BankA
-  lastModified: 638734147558536005
+  lastModified: 638734487420897388
   FileSizes:
   - Name: Desktop
-    Value: 4928
+    Value: 264480
   Exists: 1
 --- !u!114 &7283791768879942714
 MonoBehaviour:

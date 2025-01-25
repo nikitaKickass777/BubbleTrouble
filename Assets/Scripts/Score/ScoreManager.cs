@@ -19,6 +19,7 @@ public class ScoreManager : MonoBehaviour
 
     public void IncrementScore(RhythmScore grade)
     {
+        DataPersistenceManager.instance.SaveGame();
         switch(grade)
         {
             case RhythmScore.PERFECT:

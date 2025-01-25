@@ -124,4 +124,9 @@ public class Bubble : MonoBehaviour, IDataPersistence
     {
         data.playerExperience = this.playerExperience;
     }
+
+    public void LoadData(GameData data)
+    {
+        this.playerExperience = data.playerExperience;
+    }
 }

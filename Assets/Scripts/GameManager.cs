@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private EventInstance backgroundSound;
     public static GameManager instance { get; private set; }
     // Start is called before the first frame update
     void Awake(){
@@ -19,8 +18,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //play background sound -- not working?
-        //backgroundSound = AudioManager.instance.CreateEventInstance(backgroundSound);
     }
 
     // Update is called once per frame

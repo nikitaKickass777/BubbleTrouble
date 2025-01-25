@@ -12,7 +12,7 @@ public class DataPersistenceManager : MonoBehaviour
     private void Start()
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-        NewGame();
+        LoadGame();
     }
 
     private void Awake()
@@ -30,7 +30,20 @@ public class DataPersistenceManager : MonoBehaviour
         this.gameData = new GameData();
     }
 
-    //public void LoadGame(){}
+    public void LoadGame()
+    {
+        if (this.gameData == null)
+        {
+            Debug.Log("No data was found. Starting new game.");
+            NewGame();
+        }
+
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
+            dataPersistenceObj.LoadData(gameData);
+        }
+        Debug.Log("Loaded XP = " + gameData.playerExperience);
+    }
 
     public void SaveGame()
     {
