@@ -7,7 +7,7 @@ public class Bubble : MonoBehaviour
     // Start is called before the first frame update
     public float speed = 1f;  // Upward movement speed
     public int hp = 1;        // Bubble health
-    public const float SCREEN_HEIGHT = 10f; // Screen height
+    public const float SCREEN_HEIGHT = 8f; // Screen height
     void Start()
     {
         
@@ -15,7 +15,7 @@ public class Bubble : MonoBehaviour
     void Update()
     {
         MoveUpwards();
-        if(transform.position.y > 10f) // destroy bubble if it goes out of screen
+        if(transform.position.y > SCREEN_HEIGHT) // destroy bubble if it goes out of screen
         {
             DestroyBubble();
         }
@@ -38,6 +38,7 @@ public class Bubble : MonoBehaviour
         if (hp <= 0)
         {
             DestroyBubble();
+            //ScoreManager
         }
     }
 

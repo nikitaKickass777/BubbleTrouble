@@ -4,8 +4,8 @@ using System.Collections.Generic;
 public class BubbleSpawner : MonoBehaviour
 {
     public GameObject bubblePrefab;  // Assign bubble prefab in the inspector!!!
-    public int maxBubbles = 5;       // Desired number of bubbles on screen at any time
-    public float spawnY = -5f;       // Y position to spawn bubbles (bottom of the screen)
+    public int maxBubbles = 7;       // Desired number of bubbles on screen at any time
+    public float spawnY = -7f;       // Y position to spawn bubbles (bottom of the screen)
     public float spawnXMin = -8f;    // Minimum X position
     public float spawnXMax = 8f;     // Maximum X position
 
@@ -25,7 +25,10 @@ public class BubbleSpawner : MonoBehaviour
     {
         for (int i = 0; i < maxBubbles; i++)
         {
-            SpawnBubble();
+            float randomX = Random.Range(spawnXMin, spawnXMax);
+            Vector3 spawnPosition = new Vector3(randomX, (float)(spawnY + (i*1.3)), 0);
+            GameObject newBubble = Instantiate(bubblePrefab, spawnPosition, Quaternion.identity);
+            activeBubbles.Add(newBubble);
         }
     }
 
