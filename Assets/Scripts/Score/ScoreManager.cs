@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public int score = 0;
     public static ScoreManager instance { get; private set; }
     // Start is called before the first frame update
     void Awake(){
@@ -14,6 +15,12 @@ public class ScoreManager : MonoBehaviour
 
         instance = this;
     }
+
+    public void IncrementScore(int increment)
+    {
+        score += increment;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: BubbleTroubleSounds/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638734054581799747
+  lastModified: 638734079592969015
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: BubbleTroubleSounds/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638734054581799747
+  lastModified: 638734079592979790
   FileSizes:
   - Name: Desktop
     Value: 712
@@ -61,5 +61,5 @@ MonoBehaviour:
   - {fileID: -8565494527841582892}
   StringsBanks:
   - {fileID: -7589607854743594127}
-  cacheTime: 638734054581799747
+  cacheTime: 638734079592979790
   cacheVersion: 131622

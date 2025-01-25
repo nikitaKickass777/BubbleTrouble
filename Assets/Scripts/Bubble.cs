@@ -29,7 +29,8 @@ public class Bubble : MonoBehaviour
 
     void OnMouseDown()
     {
-        TakeDamage(1);
+        if(RhythmManager.Instance.InRhythm) TakeDamage(1);
+        
     }
 
     public void TakeDamage(int damage)
@@ -38,13 +39,15 @@ public class Bubble : MonoBehaviour
         if (hp <= 0)
         {
             DestroyBubble();
-            //ScoreManager
+            //play sound
+            //play animation
+            
         }
     }
 
     void DestroyBubble()
     {
         Destroy(gameObject);
-        // Add score increment logic here if needed
+        ScoreManager.instance.IncrementScore(1);
     }
 }
