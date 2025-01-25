@@ -16,6 +16,9 @@ public class RhythmManager : MonoBehaviour
     [SerializeField]    
     private Animator boomBoxAnimator;
 
+    [SerializeField]    
+    private Animator backgroundImageAnimator;
+
     private void Awake()
     {
         if (Instance == null)
@@ -43,11 +46,13 @@ public class RhythmManager : MonoBehaviour
         {
             inRhythm = true;
             boomBoxAnimator.Play("BoomBoxBeat");
+            backgroundImageAnimator.Play("BackgroundImageBeat");
         }
         else
         {
             inRhythm = false;
             boomBoxAnimator.Play("BoomBoxIdle");
+            backgroundImageAnimator.Play("BackgroundImageIdle");
         }
 
         if (currentTime >= nextBeatTime)

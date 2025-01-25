@@ -22,7 +22,7 @@ public class Bubble : MonoBehaviour
                 functionName="cos";
             }
             
-
+        bpm = RhythmManager.Instance.bpm;
         
     }
     void Update()
