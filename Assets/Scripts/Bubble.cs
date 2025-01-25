@@ -49,7 +49,7 @@ public class Bubble : MonoBehaviour, IDataPersistence
 
     void OnMouseDown()
     {
-        if(RhythmManager.Instance.InRhythm) TakeDamage(1);
+        if(RhythmManager.Instance.inRhythm != RhythmScore.SKILLISSUE  ) TakeDamage(1);
         
     }
 
@@ -58,10 +58,12 @@ public class Bubble : MonoBehaviour, IDataPersistence
         hp -= damage;
         if (hp <= 0)
         {
-            //play sound
-            AudioManager.instance.PlayOneShot(bubblePop, this.transform.position);
             DestroyBubble();
-            //play animation
+            
+            //play sound
+            AudioManager.instance.PlayOneShot(bubblePop, this.transform.position);  
+            //increase score 
+            ScoreManager.instance.IncrementScore(RhythmManager.Instance.inRhythm);
             
         }
     }
@@ -71,7 +73,7 @@ public class Bubble : MonoBehaviour, IDataPersistence
         particleSystem.Play();
         image.color = new Color(1.0f, 1.0f,1.0f,0.0f);
         StartCoroutine(PlayParticlesCoroutine());
-        ScoreManager.instance.IncrementScore(1);
+        
     }
 
     private IEnumerator PlayParticlesCoroutine(){

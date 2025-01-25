@@ -453,8 +453,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../Desktop/BubbleTroubleSound/BubbleTroubleSounds/BubbleTroubleSounds.fspro
-  sourceBankPath: ../Desktop/BubbleTroubleSound/BubbleTroubleSounds/Build
+  sourceProjectPath: BubbleTroubleSounds/BubbleTroubleSounds.fspro
+  sourceBankPath: BubbleTroubleSounds/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

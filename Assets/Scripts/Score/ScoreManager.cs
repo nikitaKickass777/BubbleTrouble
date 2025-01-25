@@ -17,9 +17,22 @@ public class ScoreManager : MonoBehaviour
         instance = this;
     }
 
-    public void IncrementScore(int increment)
+    public void IncrementScore(RhythmScore grade)
     {
-        score += increment;
+        switch(grade)
+        {
+            case RhythmScore.PERFECT:
+                score +=3;
+                break;
+            case RhythmScore.GOOD:
+                score +=2;
+                break;
+            case RhythmScore.MEDIOCRE:
+                score +=1;
+                break;
+            default:
+                break;
+        }
     }
 
     // Start is called before the first frame update
@@ -31,6 +44,8 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       Debug.LogFormat($"Your score is:{score}"); 
     }
+
+
 }
