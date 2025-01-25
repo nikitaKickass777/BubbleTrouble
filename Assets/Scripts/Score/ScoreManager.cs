@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager instance { get; private set; }
+    // Start is called before the first frame update
+    void Awake(){
+        if(instance!=null && instance!=this){
+            Destroy(this);
+            return;
+        }
+
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {

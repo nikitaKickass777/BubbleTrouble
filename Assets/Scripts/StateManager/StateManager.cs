@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class StateManager : MonoBehaviour
 {
-    public static GameManager instance { get; private set; }
+    public static StateManager instance { get; private set; }
     // Start is called before the first frame update
     void Awake(){
         if(instance!=null && instance!=this){
@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
         instance = this;
     }
-    // Start is called before the first frame update
     void Start()
     {
         
