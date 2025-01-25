@@ -4,6 +4,7 @@ using UnityEngine;
 using FMODUnity;
 
 
+
 public class Bubble : MonoBehaviour
 {
     [SerializeField] private EventReference bubblePop;
@@ -43,7 +44,7 @@ public class Bubble : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(RhythmManager.Instance.InRhythm) TakeDamage(1);
+        if(RhythmManager.Instance.inRhythm != RhythmScore.SKILLISSUE  ) TakeDamage(1);
         
     }
 
@@ -53,9 +54,12 @@ public class Bubble : MonoBehaviour
         if (hp <= 0)
         {
             DestroyBubble();
+            
             //play sound
             AudioManager.instance.PlayOneShot(bubblePop, this.transform.position);
             //play animation
+            //increase score 
+            ScoreManager.instance.IncrementScore(RhythmManager.Instance.inRhythm);
             
         }
     }
@@ -63,7 +67,7 @@ public class Bubble : MonoBehaviour
     public void DestroyBubble()
     {
         Destroy(gameObject);
-        ScoreManager.instance.IncrementScore(1);
+        
     }
 
     float horizontalMovementFunction(string functionName, float value)
