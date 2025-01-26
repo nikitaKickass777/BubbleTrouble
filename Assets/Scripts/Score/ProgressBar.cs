@@ -11,6 +11,8 @@ public class ProgressBar : MonoBehaviour
     float fillAmount;
     private float decrementingTimer = 5f;
     public float decrementingTimerConst = 5f;
+
+    [SerializeField] public GameObject rythmIndicator;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,11 @@ public class ProgressBar : MonoBehaviour
             this.currentScore = ScoreManager.instance.score;
         }
         calculateFillAmount();
+
+        if(RhythmManager.Instance.playerWon){
+            this.gameObject.SetActive(false);
+            this.rythmIndicator.SetActive(false);
+        }
     }
 
     public void calculateFillAmount(){

@@ -7,8 +7,10 @@ using FMOD.Studio;
 public class AudioManager : MonoBehaviour
 {
     public EventReference backgroundSound;
+    public EventReference specialTime;
 
     private EventInstance musicInstance;
+
     public static AudioManager instance { get; private set; }
     // Start is called before the first frame update
     void Awake()
@@ -38,6 +40,13 @@ public class AudioManager : MonoBehaviour
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         return eventInstance;
+    }
+
+    public void  changeMusic(EventReference eventReference){
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicInstance = eventInstance;
+        musicInstance.start();
     }
 
     private void OnDestroy()

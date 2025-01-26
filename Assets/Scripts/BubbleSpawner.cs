@@ -18,6 +18,7 @@ public class BubbleSpawner : MonoBehaviour
 
     void Update()
     {
+        this.maxBubbles = RhythmManager.Instance.maxBubbles;
         CheckAndSpawnBubbles();
     }
 

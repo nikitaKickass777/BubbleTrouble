@@ -23,18 +23,20 @@ public class ScoreManager : MonoBehaviour
         {
             case RhythmScore.PERFECT:
                 score +=3;
+                ScoreDisplay.instance.UpdateScore(score);
                 break;
             case RhythmScore.GOOD:
                 score +=2;
+                ScoreDisplay.instance.UpdateScore(score);
                 break;
             case RhythmScore.MEDIOCRE:
                 score +=1;
+                ScoreDisplay.instance.UpdateScore(score);
                 break;
             default:
                 break;
         }
         DataPersistenceManager.instance.SaveGame();
-        ScoreDisplay.instance.UpdateScore(score);
     }
 
     // Start is called before the first frame update

@@ -17,6 +17,9 @@ public class RhythmManager : MonoBehaviour
     private float beatInterval;  // Time between beats
     private float nextBeatTime;  // Time of next beat
     public float animationStartOffset = 0.1f;
+    public int maxBubbles = 7;
+
+    public bool playerWon = false;
     public RhythmScore inRhythm = RhythmScore.SKILLISSUE;
 
     private RhythmScore InRhythm => inRhythm;
